@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+  
+</head>
+<body>
+
+    <h1>CARTÃO DE VISITAS</h1>
+
+
+    <main id="app">
+        <section class="ticket">
+
+            <header class="front">
+                <div class="holo"></div>
+                <img class="logo" src="/images/Untitled-2.png" alt="">
+                <aside class="divider"></aside>
+            </header>
+    
+            <section class="back">
+                <div class="holo"></div>
+                <img class="logo" src="/images/Untitled-2.png" alt="">
+                <div class="data">
+                    <h3>EMPRESA</h3>
+                    <p contenteditable spellcheck=false>PCUBIC</p>
+                    <h3>APLICATIVO</h3>
+                    <p contenteditable spellcheck=false>SANTÉLIE</p>
+                    <h3>CONTATO</h3>
+                    <p contenteditable spellcheck=false>(27) 99577-0770</p>
+                    <p contenteditable spellcheck=false>(27) 99764-2319</p>
+                    <p contenteditable spellcheck=false>(27) 99299-2515</p>
+                    <a class="qr" href="/images/Captura_de_tela_2023-10-25_133434-removebg-preview.png" target="_blank">
+                    </a>
+                </div>
+    
+                <aside class="divider">
+                    <div class="username">
+                        <img class="profile" src="/images/Captura de tela 2023-10-25 151029-PhotoRoom.png-PhotoRoom.png">
+                        <span contenteditable spellcheck=false>henrys.pcubic@gmail.com</span> <img class="verified" src="https://assets.codepen.io/13471/verified.png">
+                    </div>
+                </aside>
+            </section>
+    
+        </section>
+    
+    </main>
+    </main>
+
+
+    <script>
+        const speed = 4.5;
+        const r = gsap.timeline({ repeat: -1 });
+        const o = gsap.timeline({ repeat: -1 });
+        const h = gsap.timeline({ repeat: -1 });
+
+        r.to("#app", {
+            "--r": "180deg",
+            "--p": "0%",
+            duration: speed,
+            ease: "sine.in"
+        });
+        r.to("#app", {
+            "--r": "360deg",
+            "--p": "100%",
+            duration: speed,
+            ease: "sine.out"
+        });
+        o.to("#app", {
+            "--o": 1,
+            duration: speed/2,
+            ease: "power1.in"
+        });
+        o.to("#app", {
+            "--o": 0,
+            duration: speed/2,
+            ease: "power1.out"
+        });
+
+        h.to("#app", {
+            "--h": "100%",
+            duration: speed/2,
+            ease: "sine.in"
+        });
+        h.to("#app", {
+            "--h": "50%",
+            duration: speed/2,
+            ease: "sine.out"
+        });
+        h.to("#app", {
+            "--h": "0%",
+            duration: speed/2,
+            ease: "sine.in"
+        });
+        h.to("#app", {
+            "--h": "50%",
+            duration: speed/2,
+            ease: "sine.out"
+        });
+    </script>
+</body>
+</html>
